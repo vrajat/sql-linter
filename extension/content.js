@@ -1,21 +1,22 @@
 // content.js
 
-// Get all the elements on the page
-let elements = document.getElementsByTagName("*");
+// Get the input and output elements
+let inputElement = document.getElementById("json-input");
+let outputElement = document.getElementById("output");
 
-// Iterate through the elements and modify their text
-for (let i = 0; i < elements.length; i++) {
-  let element = elements[i];
+// Get the pretty print button and add a click event listener
+let prettyPrintButton = document.getElementById("pretty-print-button");
+prettyPrintButton.addEventListener("click", function() {
+  // Get the JSON input from the text box
+  let jsonString = inputElement.value;
 
-  // Only modify elements with text content
-  if (element.innerText.length > 0) {
-    let text = element.innerText;
+  // Parse the JSON
+  let jsonObject = JSON.parse(jsonString);
 
-    // Modify the text
-    text = text.toUpperCase();
+  // Pretty print the JSON
+  let prettyJsonString = JSON.stringify(jsonObject, null, 2);
 
-    // Write the modified text back to the element
-    element.innerText = text;
-  }
-}
+  // Write the pretty printed JSON to the output element
+  outputElement.innerText = prettyJsonString;
+});
 

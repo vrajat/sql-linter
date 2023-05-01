@@ -1,16 +1,12 @@
 {
-  "manifest_version": 2,
-  "name": "My Text Modifier Extension",
+  "name": "JSON Pretty Print",
   "version": "1.0",
-  "description": "A Chrome extension that modifies text on web pages.",
-  "permissions": [
-    "activeTab"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": ["content.js"]
-    }
-  ]
+  "manifest_version": 2,
+  "description": "This extension allows you to pretty print JSON.",
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_title": "JSON Pretty Print",
+    "default_popup": "popup.html"
+  }
 }
 
