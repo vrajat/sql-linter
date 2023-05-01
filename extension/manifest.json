@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "My Text Modifier Extension",
+  "version": "1.0",
+  "description": "A Chrome extension that modifies text on web pages.",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
