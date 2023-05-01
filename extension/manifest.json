@@ -3,10 +3,14 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "This extension allows you to pretty print JSON.",
-  "permissions": ["activeTab"],
-  "browser_action": {
-    "default_title": "JSON Pretty Print",
-    "default_popup": "popup.html"
+  "permissions": [
+    "*://*/*",
+    "<all_urls>"
+  ],
+  "browser_action": {},
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }
 
